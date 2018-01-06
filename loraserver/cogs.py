@@ -63,6 +63,7 @@ def getDev(dev):
 
             #parse response string into a json object
             respObj = json.loads(resp.text)
+            print respObj
             return respObj
 
         else:
