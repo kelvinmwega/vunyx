@@ -34,7 +34,7 @@ def getDev(dev):
         headersObj = json.dumps(headers)
 
         #convert time to ISO string and add to request body object
-        timestamp["$lt"] = currentTime.strftime('%Y-%m-%dT%H:%M:%S.000Z')
+        timestamp["$gt"] = currentTime.strftime('%Y-%m-%dT%H:%M:%S.000Z')
 
         selector["dateAdded"] = timestamp
         selector["deviceId"] = dev
