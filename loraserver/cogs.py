@@ -73,5 +73,5 @@ def getDev(dev):
 
 
     except Exception as e:
-        # return "err"
-        raise
+        return "err"
+        print e
