@@ -20,10 +20,10 @@ sortArray = []
 sort = {}
 
 class reqHandler(object):
-    """docstring for reqHandler."""
-    def __init__(self, dev):
-        super(reqHandler, self).__init__()
-        self.dev = dev
+    # """docstring for reqHandler."""
+    # def __init__(self, dev):
+    #     super(reqHandler, self).__init__()
+    #     self.dev = dev
 
     def getDev(dev):
         try:
