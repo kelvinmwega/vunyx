@@ -39,7 +39,7 @@ def getDev(dev):
         selector["dateAdded"] = timestamp
         selector["deviceId"] = dev
 
-        sortObj["timestamp"] = "desc"
+        sortObj["dateAdded"] = "desc"
         sortArray.append(sortObj)
 
         #Final request body object
