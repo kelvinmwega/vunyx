@@ -1,0 +1,11 @@
+applications:
+- path: .
+  memory: 128M
+  instances: 1
+  domain: eu-gb.mybluemix.net
+  name: loraserver
+  host: loraserver
+  disk_quota: 1024M
+  services:
+  - Cloudant NoSQL DB-ev
+  buildpack: python_buildpack

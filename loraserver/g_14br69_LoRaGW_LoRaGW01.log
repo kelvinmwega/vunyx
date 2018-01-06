@@ -1,0 +1,16 @@
+2018-01-06 19:42:27,651   ibmiotf.gateway.Client     INFO    Connected successfully: g:14br69:LoRaGW:LoRaGW01, Port: 8883
+2018-01-06 19:42:29,085   ibmiotf.gateway.Client     ERROR   Unexpected disconnect from the IBM Watson IoT Platform
+2018-01-06 19:42:30,799   ibmiotf.gateway.Client     INFO    Connected successfully: g:14br69:LoRaGW:LoRaGW01, Port: 8883
+2018-01-06 19:42:32,215   ibmiotf.gateway.Client     ERROR   Unexpected disconnect from the IBM Watson IoT Platform
+2018-01-06 19:42:34,516   ibmiotf.gateway.Client     INFO    Connected successfully: g:14br69:LoRaGW:LoRaGW01, Port: 8883
+2018-01-06 19:42:35,936   ibmiotf.gateway.Client     ERROR   Unexpected disconnect from the IBM Watson IoT Platform
+2018-01-06 19:42:38,640   ibmiotf.gateway.Client     INFO    Connected successfully: g:14br69:LoRaGW:LoRaGW01, Port: 8883
+2018-01-06 19:42:40,055   ibmiotf.gateway.Client     ERROR   Unexpected disconnect from the IBM Watson IoT Platform
+2018-01-06 19:42:42,751   ibmiotf.gateway.Client     INFO    Connected successfully: g:14br69:LoRaGW:LoRaGW01, Port: 8883
+2018-01-06 19:42:44,180   ibmiotf.gateway.Client     ERROR   Unexpected disconnect from the IBM Watson IoT Platform
+2018-01-06 19:42:46,849   ibmiotf.gateway.Client     INFO    Connected successfully: g:14br69:LoRaGW:LoRaGW01, Port: 8883
+2018-01-06 19:42:48,255   ibmiotf.gateway.Client     ERROR   Unexpected disconnect from the IBM Watson IoT Platform
+2018-01-06 19:42:50,928   ibmiotf.gateway.Client     INFO    Connected successfully: g:14br69:LoRaGW:LoRaGW01, Port: 8883
+2018-01-06 19:44:00,224   ibmiotf.gateway.Client     INFO    Connected successfully: g:14br69:LoRaGW:LoRaGW01, Port: 8883
+2018-01-06 21:43:28,462   ibmiotf.gateway.Client     INFO    Connected successfully: g:14br69:LoRaGW:LoRaGW01, Port: 8883
+2018-01-06 21:44:04,839   ibmiotf.gateway.Client     INFO    Connected successfully: g:14br69:LoRaGW:LoRaGW01, Port: 8883
