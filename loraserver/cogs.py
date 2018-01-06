@@ -21,6 +21,10 @@ sort = {}
 
 
 def getDev(dev):
+
+    print "--------"
+    print dev
+
     try:
 
         #get system time in UTC
