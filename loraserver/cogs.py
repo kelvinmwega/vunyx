@@ -36,7 +36,7 @@ def getDev(dev):
         #convert time to ISO string and add to request body object
         timestamp["$lt"] = currentTime.strftime('%Y-%m-%dT%H:%M:%S.000Z')
 
-        selector["timestamp"] = timestamp
+        selector["dateAdded"] = timestamp
         selector["deviceId"] = dev
 
         sortObj["timestamp"] = "desc"
