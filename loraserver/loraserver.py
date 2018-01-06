@@ -31,7 +31,7 @@ import array
 import time
 import os,binascii
 from flask import Flask, jsonify
-from cogs import reqHandler
+import cogs as cog
 
 # Organization ID 14br69
 # Device Type LoRaGW
@@ -91,7 +91,7 @@ def respConstructor(msgRx):
 def checkNodeAddress(nodeId):
     print "########## " + nodeId.decode('base64').split(',')[0]
     nodesArray = ["EP001", "EP002", "EP003", "TestNode5", "GPSNode", "AR1"]
-    print(reqHandler.getDev(nodeId))
+    print(cog.getDev(nodeId))
     if nodeId.decode('base64').split(',')[0] in nodesArray:
         dataString = ("GW01," + str(nodeId.decode('base64').split(',')[0])).encode('base64')
         global dataEncoded
@@ -268,7 +268,8 @@ if __name__ == '__main__':
                 # print >>sys.stderr, ("Gateway ID -- " + str(binascii.hexlify(gwID)))
                 # print >>sys.stderr, ("LoRa Payload --" + rawData )
         except:
-            print "got something!!"
+            raise
+            # print "got something!!"
 
         # except KeyboardInterrupt :
         #     break
