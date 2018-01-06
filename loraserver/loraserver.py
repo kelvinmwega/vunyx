@@ -42,18 +42,6 @@ from cogs import reqHandler
 dataEncoded = None
 ########## Watson IoT MQTT Functions ###########
 
-app = Flask(__name__)
-
-@app.route('/')
-def Welcome():
-    return app.send_static_file('index.html')
-
-@app.route('/myapp')
-def WelcomeToMyapp():
-    return 'Welcome again to my app running on Bluemix!'
-
-
-
 def myOnPublishCallback():
        print("Confirmed event received by IBM Watson IoT Platform\n")
        print >>sys.stderr, '##############################################'
@@ -102,7 +90,7 @@ def respConstructor(msgRx):
 
 def checkNodeAddress(nodeId):
     print "########## " + nodeId.decode('base64').split(',')[0]
-    nodesArray = ["EP001", "EP002", "EP003", "TestNode5", "GPSNode"]
+    nodesArray = ["EP001", "EP002", "EP003", "TestNode5", "GPSNode", "AR1"]
     print(reqHandler.getDev(nodeId))
     if nodeId.decode('base64').split(',')[0] in nodesArray:
         dataString = ("GW01," + str(nodeId.decode('base64').split(',')[0])).encode('base64')
@@ -141,7 +129,6 @@ def respondPushAck():
 
 
 
-port = os.getenv('PORT', '5000')
 
 if __name__ == '__main__':
     #>>> binascii.hexlify(bytearray(array_alpha))
@@ -164,12 +151,9 @@ if __name__ == '__main__':
     gatewayCli.connect()
 
     # Bind the socket to the port
-    server_address = ('localhost', 1690)
+    server_address = ('0.0.0.0', 1690)
     print >>sys.stderr, 'starting up on %s port %s' % server_address
     sock.bind(server_address)
-
-    app.run(host='0.0.0.0', port=int(port))
-
     pullAddress = None
     pullTocken = None
     pullGatewayId = None
@@ -189,7 +173,7 @@ if __name__ == '__main__':
             gwID = data[4:12]
             rawData = data[12:]
 
-            print str(identifier)
+            print str(data)
 
             if str(identifier) == "0":
                 try:
@@ -283,8 +267,10 @@ if __name__ == '__main__':
                 print >>sys.stderr, ("Identifier -- ") + str(identifier)
                 # print >>sys.stderr, ("Gateway ID -- " + str(binascii.hexlify(gwID)))
                 # print >>sys.stderr, ("LoRa Payload --" + rawData )
+        except:
+            print "got something!!"
 
-        except KeyboardInterrupt :
-            break
+        # except KeyboardInterrupt :
+        #     break
 
     print("\nLogging off....")
