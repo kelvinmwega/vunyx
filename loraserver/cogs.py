@@ -13,18 +13,14 @@ cloudantusername = "8d7e1f8e-1f7d-4d64-8788-490379bcbad5-bluemix"
 cloudantPassword = "b69d78f8c5aad962b42e278c73cce8238522bdd4a73aaeec73fa8efc11524db3"
 operationsDB = "operations/_find"
 
-selector = {}
-timestamp = {}
-reqObj = {}
-sortObj = {}
-sortArray = []
-sort = {}
-
-
 def getDev(dev):
 
-    print "--------"
-    print dev
+    selector = {}
+    timestamp = {}
+    reqObj = {}
+    sortObj = {}
+    sortArray = []
+    sort = {}
 
     try:
 
@@ -55,7 +51,7 @@ def getDev(dev):
         print reqObj
 
         #Post the requst body
-        resp = requests.post(data = json.dumps(reqObj), url = cloudantHost+levelmeterDB, headers = headers)
+        resp = requests.post(data = json.dumps(reqObj), url = cloudantHost+operationsDB, headers = headers)
 
         print "Response status code.. " + str(resp.status_code)
 
