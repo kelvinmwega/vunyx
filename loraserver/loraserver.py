@@ -91,7 +91,7 @@ def respConstructor(msgRx):
 def checkNodeAddress(nodeId):
     print "########## " + nodeId.decode('base64').split(',')[0]
     nodesArray = ["EP001", "EP002", "EP003", "TestNode5", "GPSNode", "AR1"]
-    cog.getDev(nodeId.decode('base64').split(',')[0])
+    print(cog.getDev(nodeId.decode('base64').split(',')[0]))
     if nodeId.decode('base64').split(',')[0] in nodesArray:
         dataString = ("GW01," + str(nodeId.decode('base64').split(',')[0])).encode('base64')
         global dataEncoded
@@ -237,6 +237,7 @@ if __name__ == '__main__':
 
                 except Exception as e:
 
+                    print e
                     rxPktArray = rxPkt['stat']
                     print rxPktArray
 
