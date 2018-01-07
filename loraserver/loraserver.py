@@ -40,7 +40,7 @@ import cogs as cog
 # Authentication Token    vunyxloragw
 
 dataEncoded = None
-port = int(os.getenv('PORT', 8000))
+port = int(os.getenv('PORT', 1690))
 app = Flask(__name__)
 ########## Watson IoT MQTT Functions ###########
 
@@ -161,10 +161,10 @@ if __name__ == '__main__':
     gatewayCli.connect()
 
     # Bind the socket to the port
-    server_address = ('0.0.0.0', 1680)
+    server_address = ('0.0.0.0', 1690)
     print >>sys.stderr, 'starting up on %s port %s' % server_address
     sock.bind(server_address)
-    app.run(host='0.0.0.0', port=port, debug=True)
+    #app.run(host='0.0.0.0', port=port, debug=True)
     pullAddress = None
     pullTocken = None
     pullGatewayId = None
@@ -249,8 +249,12 @@ if __name__ == '__main__':
                 except Exception as e:
 
                     print e
-                    rxPktArray = rxPkt['stat']
-                    print rxPktArray
+                    try:
+                        rxPktArray = rxPkt['stat']
+                        print rxPktArray
+                    except Exception as e:
+                        print e
+
 
             elif str(identifier) == "2":
                 dataAck.extend(int_to_bytes(protVersion, 1))
