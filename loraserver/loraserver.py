@@ -92,17 +92,30 @@ def respConstructor(msgRx):
 
 def checkNodeAddress(nodeId):
     print "########## " + nodeId.decode('base64').split(',')[0]
-    checkNodeAddressCdt(nodeId)
+    # checkNodeAddressCdt(nodeId)
     nodesArray = ["EP001", "EP002", "EP003", "TestNode5", "GPSNode", "AR1"]
 
-    if nodeId.decode('base64').split(',')[0] in nodesArray:
+    # if nodeId.decode('base64').split(',')[0] in nodesArray:
+    #     dataString = ("GW01," + str(nodeId.decode('base64').split(',')[0])).encode('base64')
+    #     global dataEncoded
+    #     dataEncoded = dataString
+    #     print dataString
+    #     return True
+    #
+    # return False
+
+    nodeDetails = cog.getDev(nodeId.decode('base64').split(',')[0])
+
+    if len(nodeDetails['docs']) > 0:
         dataString = ("GW01," + str(nodeId.decode('base64').split(',')[0])).encode('base64')
         global dataEncoded
         dataEncoded = dataString
         print dataString
         return True
 
-    return False
+    else:
+        return False
+
 
 def checkNodeAddressCdt(nodeId):
     try:
