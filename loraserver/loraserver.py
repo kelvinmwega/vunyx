@@ -161,7 +161,7 @@ if __name__ == '__main__':
     gatewayCli.connect()
 
     # Bind the socket to the port
-    server_address = ('0.0.0.0', 1690)
+    server_address = ('0.0.0.0', 1680)
     print >>sys.stderr, 'starting up on %s port %s' % server_address
     sock.bind(server_address)
     app.run(host='0.0.0.0', port=port, debug=True)
