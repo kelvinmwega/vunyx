@@ -1,1 +1,2 @@
+cmd: kill -9 $(lsof -t -i:1690)
 web: python loraserver.py

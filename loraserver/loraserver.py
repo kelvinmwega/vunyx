@@ -40,6 +40,8 @@ import cogs as cog
 # Authentication Token    vunyxloragw
 
 dataEncoded = None
+port = int(os.getenv('PORT', 8000))
+app = Flask(__name__)
 ########## Watson IoT MQTT Functions ###########
 
 def myOnPublishCallback():
@@ -90,8 +92,9 @@ def respConstructor(msgRx):
 
 def checkNodeAddress(nodeId):
     print "########## " + nodeId.decode('base64').split(',')[0]
+    checkNodeAddressCdt(nodeId)
     nodesArray = ["EP001", "EP002", "EP003", "TestNode5", "GPSNode", "AR1"]
-    print(cog.getDev(nodeId.decode('base64').split(',')[0]))
+
     if nodeId.decode('base64').split(',')[0] in nodesArray:
         dataString = ("GW01," + str(nodeId.decode('base64').split(',')[0])).encode('base64')
         global dataEncoded
@@ -100,6 +103,13 @@ def checkNodeAddress(nodeId):
         return True
 
     return False
+
+def checkNodeAddressCdt(nodeId):
+    try:
+        cog.getDev(nodeId.decode('base64').split(',')[0])
+    except Exception as e:
+        pass
+
 
 def postToWatsonIoT(pktTProcess):
 
@@ -154,6 +164,7 @@ if __name__ == '__main__':
     server_address = ('0.0.0.0', 1690)
     print >>sys.stderr, 'starting up on %s port %s' % server_address
     sock.bind(server_address)
+    app.run(host='0.0.0.0', port=port, debug=True)
     pullAddress = None
     pullTocken = None
     pullGatewayId = None
