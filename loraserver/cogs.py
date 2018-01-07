@@ -65,7 +65,8 @@ def getDev(dev):
 
         else:
             print "Encountered error fetching data, check internet connection"
-            return resp.status_code
+            print resp.text
+            
 
 
 
