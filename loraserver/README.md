@@ -7,7 +7,7 @@ This application is a UDP server that listens for lora Uplink packets from the L
 1. [Install Python][]
 1. cd into this project's root directory
 1. Run `pip install -r requirements.txt` to install the app's dependencies
-1. Run `python welcome.py`
+1. Run `python loraserver.py`
 
 
 [Install Python]: https://www.python.org/downloads/
